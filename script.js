@@ -92,19 +92,20 @@ let upperCasedCharacters = [
 ];
 console.log(upperCasedCharacters)
 
-let newCharactersArray = passwordOptionsArray
-let passwordOptionsArray = passwordOptionsArray.concat(numericCharacters,specialCharacters, upperCasedCharacters, lowerCasedCharacters);
-console.log(passwordOptionsArray)
-
-//function passwordOptionArray(){  
-  //return passwordOptionArray
-//let passwordOptionsArray = passwordOptionsArray.concat(numericCharacter, specialCharacter, upperCasedCharacter, lowerCasedCharacter) 
+// New Array with all character options
 //console.log(passwordOptionsArray)
+//var newArray = passwordOptionsArray;
+//concat(numericCharacters,specialCharacters, upperCasedCharacters, lowerCasedCharacters)
+//function passwordOptionsArray(){  
+  //return passwordOptionsArray
   
+  //console.log(passwordOptionsArray)
+  
+  // Password meeting all criteria of length and at least one of the characters
   let passwordLength = "True"
   
   let password = {
-    //Length query
+    
     length: 0,
     specialCharacters: [],
     lowerCasedCharacters: [],
@@ -114,49 +115,49 @@ console.log(passwordOptionsArray)
     
   }
   if (passwordLength.password === "True") {
-    console.log("Is long enough")
+    console.log("Meets all criteria")
     
   } else {
-    console.log("Not long enough")
+    console.log("Password is not long enough! Please start again.")
   }
   
+  //choice of length of password at least 10 character but no more than 64
+  function getPasswordOptions() {
+    let passwordLength = password.length()
+    //for (let i = 0; i < passwordOptionsArray.length; i++); 
+    //length += passwordOptionsArray[i];
+    
+  }
+  console.log(getPasswordOptions)
   
   
-
-//choice of length of password at least 10 character but no more than 64
-function getPasswordOptions() {
-  let passwordLength = password.length()
-  //for (let i = 0; i < passwordOptionsArray.length; i++); 
-  //length += passwordOptionsArray[i];
+  //let newPassword = "";
   
-}
-console.log(getPasswordOptions)
+  /* Function to prompt user for password options
+  //character types to include at least one character type: lowercase, uppercase, numeric and special characters
+  //prompts
+  //validate for each input
+  */
+let passwordOptionsArray = [];
+passwordOptionsArray = passwordOptionsArray.concat(numericCharacters, specialCharacters, upperCasedCharacters, lowerCasedCharacters);
+console.log(passwordOptionsArray)
+//return passwordOptionsArray
 
 
-//let newPassword = "";
-
-/* Function to prompt user for password options
-//character types to include at least one character type: lowercase, uppercase, numeric and special characters
-//prompts
-//validate for each input
-passwordOptionsArray = passwordOptionsArray.concat(exampleArray);
-
-return passwordOptionsArray
-
-}
-
-*/
 // Function for getting a random element from an array
 function getRandom(arr) {
-  return
+  let randomIndex = Math.floor(math.random()*passwordOptionsArray.length);
+  console.log(randomIndex)
+
   
+  return randomIndex
 }
 
 // Function to generate password with user input
 function generatePassword() {
   var passwordLength = prompt("Choose length of password length between 10 and 64 characters");
   console.log(passwordLength)
-  
+
   if (passwordLength > 10 && passwordLength < 64) {
     console.log("Yes")
     var numericCharacters = confirm("I want password to have numeric characters")
@@ -167,42 +168,42 @@ function generatePassword() {
     console.log("Yes to upper cased charaters", upperCasedCharacters)
     var lowerCasedCharacters = confirm("Yes to lower cased characters in my password")
     console.log("Yes to lower cased characters", lowerCasedCharacters)
-    
-    
+
+
     if (numericCharacters === true) {
-      passwordOptionsArray = passwordOptionsArray.concat(numericCharacter)
-      
+      passwordOptionArray = passwordOptionsArray.concat(numericCharacters)
+
     }
-    
+
     if (specialCharacters === true) {
-      passwordOptionsArray = passwordOptionsArray.concat(specialCharacter)
-      
+      passwordOptionArray = passwordOptionsArray.concat(specialCharacters)
+
     }
-    
+
     if (upperCasedCharacters === true) {
-      passwordOptionsArray = passwordOptionsArray.concat(upperCasedCharacter)
-      
+      passwordOptionArray = passwordOptionsArray.concat(upperCasedCharacters)
+
     }
-    
-    if (lowerCasedCharacters === true){
-      passwordOptionsArray = passwordOptionsArray.concat(lowerCasedCharacter)
+
+    if (lowerCasedCharacters === true) {
+      passwordOptionArray = passwordOptionsArray.concat(lowerCasedCharacters)
     }
-    
+
     console.log(passwordOptionsArray)
-    
+
     let randomIndex = Math.floor(Math.random() * passwordOptionsArray.length)
-  
+
     for (let i = 0; i < passwordLength; i++) {
-  
+
       //newPassword += ""
-  
-  
+
+
       return "generate password"
     }
 
 
   }
-  
+
   else {
     console.log("Start again")
     generatePassword()
@@ -221,7 +222,7 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  //passwordText.value = password;
 }
 
 // Add event listener to generate button
