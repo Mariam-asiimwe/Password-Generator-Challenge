@@ -93,7 +93,7 @@ let upperCasedCharacters = [
 console.log(upperCasedCharacters)
 
 let newCharactersArray = passwordOptionsArray
-//let passwordOptionsArray = passwordOptionsArray.concat(numericCharacters,specialCharacters, upperCasedCharacters, lowerCasedCharacters);
+let passwordOptionsArray = passwordOptionsArray.concat(numericCharacters,specialCharacters, upperCasedCharacters, lowerCasedCharacters);
 console.log(passwordOptionsArray)
 
 //function passwordOptionArray(){  
